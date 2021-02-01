@@ -1,9 +1,12 @@
 import "./App.css";
+import CounterContainer from "./containers/counterContainer";
+import TodosContainer from "./containers/todosContainer";
 
 function App() {
   return (
     <div>
-      <h2>Redux</h2>
+      <CounterContainer />
+      <TodosContainer />
     </div>
   );
 }
