@@ -1,7 +1,9 @@
 import React from "react";
 
-const Counter3 = ({ number, diff, onIncrease, onDecrease }) => {
-  const onChange = (e) => {};
+const Counter3 = ({ number, diff, onIncrease, onDecrease, onSetDiff }) => {
+  const onChange = (e) => {
+    onSetDiff(parseInt(e.target.value), 10);
+  };
   return (
     <div>
       <h2>{number}</h2>

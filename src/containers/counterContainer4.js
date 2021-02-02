@@ -1,28 +1,28 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Counter3 from "../components/counter3";
-import { decrease, increase, setDiff } from "../modules/counter3";
+import Counter4 from "../components/counter4";
+import { decrease, increase, setDiff } from "../modules/counter4";
 
-const CounterContainer3 = (props) => {
+const CounterContainer4 = (props) => {
   const { number, diff } = useSelector((state) => ({
-    number: state.counter3.number,
-    diff: state.counter3.diff,
+    number: state.counter4.number,
+    diff: state.counter4.diff,
   }));
 
   const dispatch = useDispatch();
   const onIncrease = () => dispatch(increase());
-  const onDecrease = () => dispatch(decrease());
   const onSetDiff = (diff) => dispatch(setDiff(diff));
+  const onDecrease = () => dispatch(decrease());
 
   return (
-    <Counter3
+    <Counter4
       number={number}
       diff={diff}
-      onSetDiff={onSetDiff}
-      onDecrease={onDecrease}
       onIncrease={onIncrease}
+      onDecrease={onDecrease}
+      onSetDiff={onSetDiff}
     />
   );
 };
 
-export default CounterContainer3;
+export default CounterContainer4;
