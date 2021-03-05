@@ -1,8 +1,7 @@
-/* 액션 타입 선언 */
-const ADD_TODO = "todos/ADD_TODO";
-const TOGGLE_TODO = "todos/TOGGLE_TODO";
+// 액션타입 선언
+const ADD_TODO = "/todos/ADD_TODO";
+const TOGGLE_TODO = "/todos/TOGGLE_TODO";
 
-/* 액션 생성함수 선언 */
 let nextId = 1;
 export const addTodo = (text) => ({
   type: ADD_TODO,
@@ -16,10 +15,8 @@ export const toggleTodo = (id) => ({
   id,
 });
 
-/* 초기 함수 선언 */
 const initialState = [];
 
-/* 리듀서 함수  */
 export default function todos(state = initialState, action) {
   switch (action.type) {
     case ADD_TODO:
