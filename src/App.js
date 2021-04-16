@@ -1,12 +1,10 @@
 import "./App.css";
-import CounterContainerTest2 from "./containers/counterContainerTest2";
-import LoginContainer from "./containers/loginContainer";
-import TodosContainerTest from "./containers/todosContainerTest";
+import ThunkPostsContainer from "./containers/thunkPostsContainer";
 
 function App() {
   return (
     <div>
-      <LoginContainer />
+      <ThunkPostsContainer />
       <hr />
     </div>
   );

@@ -4,14 +4,12 @@ const LOGIN_REQUEST = "LOGIN_REQUEST";
 const LOGIN_FAILURE = "LOGIN_FAILURE";
 const LOGOUT = "LOGOUT";
 
-export const login = () => async (dispatch) => {
-  dispatch({ type: LOGIN });
+export const login = (data) => async (dispatch) => {
+  dispatch(loginRequest(data));
   try {
-    setTimeout(() => {
-      dispatch({ type: LOGIN_SUCCESS });
-    }, 3000);
+    setTimeout(() => dispatch(loginSuccess()), 2000);
   } catch (e) {
-    dispatch({ type: LOGIN_FAILURE, error: e });
+    dispatch(loginFailure());
   }
 };
 export const loginSuccess = (data) => ({
