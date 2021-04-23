@@ -1,50 +1,44 @@
 const LOGIN = "LOGIN";
 const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 const LOGIN_ERROR = "LOGIN_ERROR";
-const LOGOUT = "LOGOUT";
 
-export const login = (data) => (dispatch) => {
+export const getLogin = (data) => (dispatch) => {
   dispatch({ type: LOGIN });
   try {
-    setTimeout(() => dispatch({ type: LOGIN_SUCCESS, name: data }), 2000);
+    setTimeout(() => dispatch({ type: LOGIN_SUCCESS, name: data }));
   } catch (e) {
-    dispatch({ type: LOGIN_ERROR, error: e });
+    dispatch({ type: LOGIN_ERROR });
   }
 };
-
-export const logout = () => ({ type: LOGOUT });
 
 const initialState = {
   isLogin: false,
   name: null,
 };
 
-export default function thunkLogin(state = initialState, action) {
+export default function login(state = initialState, action) {
   switch (action.type) {
-    case LOGIN:
-      return {
-        ...state,
-        isLogin: false,
-        name: null,  
-      };
-    case LOGIN_SUCCESS:
-      return {
-        ...state,
-        isLogin: true,
-        name: action.name,
-      };
-    case LOGIN_ERROR:
-      return {
-        ...state,
-        isLogin: true,
-        error: action.error,
-      };
-    case LOGOUT:
+    case LOGIN: {
       return {
         ...state,
         isLogin: false,
         name: null,
       };
+    }
+    case LOGIN_SUCCESS: {
+      return {
+        ...state,
+        isLogin: true,
+        name: action.name,
+      };
+    }
+    case LOGIN_ERROR: {
+      return {
+        ...state,
+        isLogin: true,
+        name: null,
+      };
+    }
     default:
       return state;
   }

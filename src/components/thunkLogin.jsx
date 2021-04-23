@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 
-const ThunkLogin = ({ state, onLogin, onLogout }) => {
+const ThunkLogin = ({ state, onLogin, onLogout, handleChange, inputName }) => {
   const { isLogin, name } = state;
+  const inputRef = useRef();
+
   return (
     <div>
       {isLogin ? (
@@ -10,7 +12,10 @@ const ThunkLogin = ({ state, onLogin, onLogout }) => {
           <button onClick={onLogout}>로그아웃</button>
         </div>
       ) : (
-        <button onClick={onLogin}>로그인</button>
+        <form>
+          <input type="text" onChange={handleChange} value={inputName} />
+          <button onClick={onLogin}>로그인</button>
+        </form>
       )}
     </div>
   );

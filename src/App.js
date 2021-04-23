@@ -1,13 +1,13 @@
 import "./App.css";
-import ThunkLoginContainer from "./containers/thunkLoginContainer";
-import ThunkPostsContainer from "./containers/thunkPostsContainer";
+import PraThunkLoginContainer from "./containers/praThunkLoginContainer";
+import PreThunkPostsContainer from "./containers/preThunkPostsContainer";
 
 function App() {
   return (
     <div>
-      <ThunkLoginContainer />
+      <PraThunkLoginContainer />
       <hr />
-      <ThunkPostsContainer />
+      <PreThunkPostsContainer />
     </div>
   );
 }
